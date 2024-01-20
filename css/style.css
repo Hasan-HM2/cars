@@ -1,0 +1,255 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    perspective: 600px;
+}
+
+li{
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+nav {
+    width: 100%;
+    background-color: black;
+    padding: 20px 20px;
+    z-index: 4;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav ul a {
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+nav ul li {
+    position: relative;
+    padding: 6px;
+    border: 1px solid;
+    transition: border .4s;
+}
+
+nav ul li:hover {
+    border: 1px solid rgba(255, 217, 0, 0.343);
+}
+
+.our-cars .submenu{
+    position: absolute;
+    flex-direction: column;
+    background-color: black;
+    bottom: -130px;
+    width: 160px;
+    padding: 0px 20px 10px 20px; 
+    z-index: 5;
+    visibility: hidden;
+    transition: .3s;
+}
+
+.our-cars:hover .submenu{
+    visibility: visible;
+}
+/* end nav */
+/* -------HERO------- */
+
+.Hero{
+    height: 100vh;
+    background-image: url(../images/bg-car.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    text-align: center;
+}
+
+.content {
+    position: relative;
+}
+
+.Hero .content{
+    color: wheat;
+    position: absolute;
+    left: 100px;
+    top: 14%;
+    font-size: 35px;
+}
+
+.Hero .content p {
+    margin-top: 20px;
+}
+
+.car-container {
+    width: 90%;
+    height: 100px;
+    position: relative;
+    overflow: hidden;
+    margin-top: 20px;
+  }
+  
+  .car {
+    width: 100px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: -50px;
+    transform: translateY(-50%);
+    animation: moveCar 4s linear infinite;
+  }
+  
+  @keyframes moveCar {
+    0% {
+      left: -50px;
+    }
+    100% {
+      left: 100%;
+    }
+  }
+
+  /* Hero End */
+  /* Card Section */
+
+.card-container {
+    background-color: rgba(0, 0, 0, 0.904);
+    transform-style: preserve-3d;
+}
+
+.title{
+    text-align: center;
+    color: #dddddd;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    transform: translateY(20px);
+}
+
+.title::after{
+    position: absolute;
+    content: '';
+    height: 3px;
+    background-color: #a99191;
+    width: 50px;
+    top: 50px;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    transition: .3s;
+}
+
+.title:hover::after{
+    width: 120px;
+}
+
+.card-container .list{
+    display: flex;
+    text-align: center;
+    width: 100%;
+    margin: 60px 0px;
+    justify-content: center;
+    gap: 100px;
+    align-items: center;
+}
+
+.card-container .list li{
+    color: rgb(202, 202, 202);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.card-container .list li:hover{
+    transform: translateY(-5px);
+    text-shadow: 0px 0px 4px;
+}
+
+
+.cars img {
+    width: 280px;
+    height: 330px;
+}
+
+.cars .all-cards{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+}
+
+.cars .card {
+    width: 23%;
+    position: relative;
+    height: 410px;
+    transform-style: preserve-3d;
+    transition: .3s;
+}
+
+.cars .card:hover{
+    transform: rotateY(180deg);
+}
+
+.cars .card .front{
+    position: absolute;
+    width: 280px;
+    height: 330px;
+    z-index: 1;
+    backface-visibility: hidden;
+    background-color: black;
+}
+
+.cars .card .back{
+    position: absolute;
+    width: 280px;
+    height: 330px;
+    color: wheat;
+    background-color: rgb(67, 64, 64);
+    transform: rotateY(180deg);
+    text-align: center;
+    padding: 15px;
+}
+/* end card */
+
+/* start footer */
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #383737;
+    height: 200px;
+    position: relative;
+}
+
+footer p{
+    margin-bottom: 10px;
+    color: #d4d2d2;
+}
+footer .social{
+    width: 100%;
+    position: absolute;
+    height: 25px;
+    background-color: rgba(0,0,0,0.7);
+    left: 0;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+footer .social .fa{
+    cursor: pointer;
+}
